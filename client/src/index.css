@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F6F4EE;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+    color: #12362B;
+  }
+  ::selection {
+    background-color: #C9A15A;
+    color: #12362B;
+  }
+  *:focus-visible {
+    outline: 2px solid #C9A15A;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card border border-line rounded-card shadow-card;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-ink text-paper font-medium px-4 py-2.5 rounded-md hover:bg-ink-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-line text-ink font-medium px-4 py-2.5 rounded-md hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-rust/40 text-rust font-medium px-3 py-2 rounded-md hover:bg-rust/5 transition-colors;
+  }
+  .input-field {
+    @apply w-full bg-white border border-line rounded-md px-3.5 py-2.5 text-ink placeholder:text-ink2/60 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-colors;
+  }
+  .label-text {
+    @apply block text-sm font-medium text-ink2 mb-1.5;
+  }
+  .amount {
+    @apply font-mono tabular-nums;
+  }
+  .eyebrow {
+    @apply text-xs uppercase tracking-wider text-ink2 font-medium;
+  }
+}
